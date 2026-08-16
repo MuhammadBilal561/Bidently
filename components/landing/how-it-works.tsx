@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
 import { FileUp, ScanSearch, PenLine } from "lucide-react";
+import { enterTransition, stateTransition } from "@/lib/motion";
 
 const STEPS = [
   {
@@ -35,7 +36,7 @@ const STEPS = [
             key={i}
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.4, delay: 0.1 * i }}
+            transition={enterTransition(0.1 * i)}
             style={{ originX: 0, width: `${w}%` }}
             className="h-2.5 rounded-sm bg-slate-line"
           />
@@ -59,7 +60,7 @@ const STEPS = [
         <motion.span
           initial={{ scale: 0.9 }}
           whileInView={{ scale: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={stateTransition()}
           className="mt-2 w-fit text-[10px] font-mono text-verified bg-verified-soft rounded-full px-2 py-0.5"
         >
           from: Corporate Registration & Compliance Statement

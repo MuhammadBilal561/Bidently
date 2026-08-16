@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import type { DraftAnswer, ExtractedRequirement, ExtractionResult, TenderStatus } from "@/lib/types";
 import { api } from "@/lib/api-client";
+import { enterTransition, stateTransition } from "@/lib/motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { DraftSkeleton } from "@/components/ui/skeleton";
 import {
@@ -304,7 +305,7 @@ function ResultsView({
     <motion.div
       initial={reduce ? undefined : { opacity: 0, y: 8 }}
       animate={reduce ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      transition={stateTransition(0.35)}
     >
       {result.mode === "mock" && (
         <div className="mb-6 rounded-md border border-slate-line bg-surface px-4 py-2.5 text-xs text-slate flex items-center gap-2">
@@ -461,7 +462,7 @@ function RequirementRow({
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={stateTransition()}
               className="overflow-hidden"
             >
               <div className="mt-2.5 rounded-md bg-ember-soft/50 border-l-2 border-ember px-3.5 py-2.5">
@@ -492,7 +493,7 @@ function RequirementRow({
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={stateTransition()}
               className="mt-2.5 rounded-md border border-slate-line bg-paper px-3.5 py-3"
             >
               {draft.content_gap ? (
@@ -511,7 +512,7 @@ function RequirementRow({
                           key={s.content_id}
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.25, delay: 0.1 + i * 0.06, ease: "easeOut" }}
+                          transition={enterTransition(0.1 + i * 0.06)}
                           className="text-[10px] font-mono text-verified bg-verified-soft rounded-full px-2 py-0.5"
                         >
                           from: {s.title}

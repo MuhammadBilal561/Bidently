@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Loader2, ShieldCheck } from "lucide-react";
 import { api, type AuthUser } from "@/lib/api-client";
+import { stateTransition } from "@/lib/motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 export function AuthScreen({ onAuthenticated }: { onAuthenticated: (user: AuthUser) => void }) {
@@ -91,7 +92,7 @@ export function AuthScreen({ onAuthenticated }: { onAuthenticated: (user: AuthUs
             onSubmit={submitMfa}
             initial={reduce ? undefined : { opacity: 0, y: 12 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={stateTransition()}
             className="rounded-lg border border-slate-line bg-surface p-6 space-y-4 shadow-[var(--shadow-floating)]"
           >
             <input
@@ -160,7 +161,7 @@ export function AuthScreen({ onAuthenticated }: { onAuthenticated: (user: AuthUs
           onSubmit={submit}
           initial={reduce ? undefined : { opacity: 0, y: 12 }}
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={stateTransition()}
           className="rounded-lg border border-slate-line bg-surface p-6 space-y-4 shadow-[var(--shadow-floating)]"
         >
           {mode === "signup" && (
@@ -289,7 +290,7 @@ function FormError({
       key={seq}
       initial={{ opacity: 0, x: -4 }}
       animate={{ opacity: 1, x: [0, -6, 6, -3, 3, 0] }}
-      transition={{ duration: 0.35 }}
+      transition={stateTransition(0.35)}
       className="text-xs text-attention"
       role="alert"
     >

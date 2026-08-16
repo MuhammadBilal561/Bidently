@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { LogOut } from "lucide-react";
 import type { AuthUser } from "@/lib/api-client";
+import { stateTransition } from "@/lib/motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 export function TopBar({ user, onLogout }: { user: AuthUser; onLogout: () => void }) {
@@ -12,7 +13,7 @@ export function TopBar({ user, onLogout }: { user: AuthUser; onLogout: () => voi
     <motion.header
       initial={reduce ? undefined : { opacity: 0, y: -10 }}
       animate={reduce ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      transition={stateTransition()}
       className="sticky top-0 z-20 border-b border-slate-line bg-paper/80 backdrop-blur-sm"
     >
       <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">

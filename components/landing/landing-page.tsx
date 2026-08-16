@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { motionTokens } from "@/lib/motion";
+import { enterTransition } from "@/lib/motion";
 import { LandingHero } from "./landing-hero";
 import { HowItWorks } from "./how-it-works";
 import { FeatureProof } from "./feature-proof";
@@ -31,7 +31,7 @@ export default function LandingPage() {
       <motion.header
         initial={reduce ? undefined : { opacity: 0, y: -12 }}
         animate={reduce ? undefined : { opacity: 1, y: 0 }}
-        transition={{ duration: motionTokens.durations.slow, ease: motionTokens.easing.entrance }}
+        transition={enterTransition()}
         className="sticky top-0 z-20 border-b border-slate-line bg-paper/80 backdrop-blur-sm"
       >
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">

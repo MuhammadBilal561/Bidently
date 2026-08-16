@@ -132,7 +132,7 @@ function MockRow({
         <motion.div
           initial={false}
           animate={{ height: "auto", opacity: 1 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
+          transition={stateTransition()}
           className="mt-2 rounded-md bg-ember-soft/50 border-l-2 border-ember px-3.5 py-2.5"
         >
           <p className="text-xs text-ink/80 font-mono leading-relaxed">

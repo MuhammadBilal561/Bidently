@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FileText, Loader2, Plus } from "lucide-react";
 import { api } from "@/lib/api-client";
+import { enterTransition } from "@/lib/motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 interface TenderSummary {
@@ -65,7 +66,7 @@ export function TenderList({
             key={t.id}
             initial={reduce ? undefined : { opacity: 0, y: 6 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.25, delay: i * 0.04, ease: "easeOut" }}
+            transition={enterTransition(i * 0.04)}
           >
             <button
               onClick={() => onOpen(t.id)}

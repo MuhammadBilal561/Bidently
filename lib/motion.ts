@@ -38,7 +38,7 @@ export function enterTransition(delay = 0) {
 }
 
 /** State-change transition factory. */
-export function stateTransition(duration = motionTokens.durations.medium) {
+export function stateTransition(duration: number = motionTokens.durations.medium) {
   return {
     duration,
     ease: motionTokens.easing.stateChange,

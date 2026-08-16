@@ -23,7 +23,7 @@ interface Analytics {
 
 const TENDER_PIPELINE = [
   { key: "identified", label: "Identified", color: "bg-slate/30" },
-  { key: "in_progress", label: "In progress", color: "bg-sky-200" },
+  { key: "in_progress", label: "In progress", color: "bg-ember-soft" },
   { key: "submitted", label: "Submitted", color: "bg-ember/60" },
   { key: "won", label: "Won", color: "bg-verified" },
   { key: "lost", label: "Lost", color: "bg-attention/60" },
@@ -31,8 +31,8 @@ const TENDER_PIPELINE = [
 
 const REQ_STAGES = [
   { key: "not_started", label: "Not started", color: "bg-slate/30" },
-  { key: "in_progress", label: "In progress", color: "bg-sky-200" },
-  { key: "answered", label: "Answered", color: "bg-amber-300" },
+  { key: "in_progress", label: "In progress", color: "bg-ember-soft" },
+  { key: "answered", label: "Answered", color: "bg-ember/60" },
   { key: "reviewed", label: "Reviewed", color: "bg-verified" },
 ] as const;
 
