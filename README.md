@@ -1,16 +1,9 @@
 # Bidently — Starter
 
-**Opening this in an AI coding tool (VS Code, Cursor, etc.)? Read
-`AGENT_INSTRUCTIONS.md` in full before touching anything else.** It has the
-complete build history, exactly what's tested and how, a real competitive
-analysis, and a prioritized task list — this README is the quick-start,
-that file is the actual handoff document.
-
 A working local product, not a mockup: real auth, real per-organization
 data isolation, and real persistence on top of the two features that
-actually sell it (extraction and grounded drafting). This is Phases 1-3 of
-`Bidently-SaaS-Blueprint.md`, built and tested against a live server, not
-just compiled.
+actually sell it (extraction and grounded drafting). Built and tested
+against a live server, not just compiled.
 
 ## Run it
 
@@ -157,7 +150,8 @@ future mapping. The generated migration SQL was checked by hand and reads
 as correct Postgres DDL. **It has never been run against a real database**
 (this build environment couldn't install Postgres to test it live) — that's
 the single most important thing to verify before trusting it, and
-`AGENT_INSTRUCTIONS.md` §6 has the exact activation steps if you already
+`GUIDE.md` Phase E for the exact activation steps — run
+against your real Supabase project before trusting it.
 have a Supabase project ready to connect.
 
 The mapping between the two schemas, for reference:
