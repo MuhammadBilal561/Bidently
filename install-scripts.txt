@@ -1,8 +1,0 @@
-5 packages have install scripts blocked because they are not covered by allowScripts:
-  esbuild@0.18.20 (postinstall: node install.js)
-  esbuild@0.25.12 (postinstall: node install.js)
-  sharp@0.34.5 (install: node install/check.js || npm run build)
-  esbuild@0.28.2 (postinstall: node install.js)
-  unrs-resolver@1.12.2 (postinstall: node postinstall.js)
-
-Run `npm install-scripts approve <pkg>` to allow, or `npm install-scripts deny <pkg>` to deny.

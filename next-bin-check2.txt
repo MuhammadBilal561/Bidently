@@ -1,6 +1,0 @@
- Volume in drive C is Windows-SSD
- Volume Serial Number is 6AC6-B26F
-
- Directory of C:\Users\User\Downloads\New Projects\bidently-starter\node_modules\next\dist\bin
-
-File Not Found
