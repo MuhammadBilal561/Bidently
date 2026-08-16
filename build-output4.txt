@@ -1,0 +1,51 @@
+npm notice run bidently-starter@0.1.0 build
+npm notice run next build
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 15.0s
+  Running TypeScript ...
+  Finished TypeScript in 23.8s ...
+  Collecting page data using 11 workers ...
+SqliteError: database is locked
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__0n95snx._.js:14:31055)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:281:20)
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__1f5szz5._.js:1:1351)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at instantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:882:12)
+    at getOrInstantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:895:12)
+    at Object.m (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:898:18) {
+  code: 'SQLITE_BUSY'
+}
+SqliteError: database is locked
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__0n95snx._.js:14:31055)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:281:20)
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__1v7mv8b._.js:1:1339)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at instantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:882:12)
+    at getOrInstantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:895:12)
+    at Object.m (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:898:18) {
+  code: 'SQLITE_BUSY'
+}
+SqliteError: database is locked
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__1hgqu6i._.js:14:31055)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:281:20)
+    at module evaluation (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[root-of-the-server]__1ii8zg4._.js:1:1365)
+    at instantiateModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:853:9)
+    at instantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:882:12)
+    at getOrInstantiateRuntimeModule (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:895:12)
+    at Object.m (C:\Users\User\Downloads\New Projects\bidently-starter\.next\server\chunks\[turbopack]_runtime.js:898:18) {
+  code: 'SQLITE_BUSY'
+}
+
+> Build error occurred
+Error: Failed to collect page data for /api/auth/login
+    at ignore-listed frames {
+  type: 'Error'
+}

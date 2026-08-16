@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env.local
+.env
+data/*.db
+data/*.db-shm
+data/*.db-wal
+AGENT_INSTRUCTIONS.md
+DESIGN_UPGRADE_PROMPT.md
+GUIDE.md

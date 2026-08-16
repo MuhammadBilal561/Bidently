@@ -1,0 +1,92 @@
+npm notice run bidently-starter@0.1.0 build
+npm notice run next build
+▲ Next.js 16.2.12 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 4 errors:
+./node_modules/drizzle-orm/pg-core/columns/common.js:7:1
+Module not found: Can't resolve '../utils/array.js'
+  [90m 5 |[0m [36mimport[0m { iife } [36mfrom[0m [32m"../../tracing-utils.js"[0m;
+  [90m 6 |[0m [36mimport[0m { uniqueKeyName } [36mfrom[0m [32m"../unique-constraint.js"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m { makePgArray, parsePgArray } [36mfrom[0m [32m"../utils/array.js"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m [36mclass[0m [33mPgColumnBuilder[0m [36mextends[0m [33mColumnBuilder[0m {
+  [90m 9 |[0m   foreignKeyConfigs = [];
+  [90m10 |[0m   [36mstatic[0m [entityKind] = [32m"PgColumnBuilder"[0m;
+
+
+
+Import trace:
+  App Route:
+    ./node_modules/drizzle-orm/pg-core/columns/common.js
+    ./node_modules/drizzle-orm/pg-core/columns/enum.js
+    ./node_modules/drizzle-orm/sql/sql.js
+    ./node_modules/drizzle-orm/sql/expressions/select.js
+    ./app/api/tenders/route.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/drizzle-orm/sql/functions/index.js:1:1
+Module not found: Can't resolve './aggregate.js'
+[31m[1m>[0m [90m1 |[0m [36mexport[0m * [36mfrom[0m [32m"./aggregate.js"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mexport[0m * [36mfrom[0m [32m"./vector.js"[0m;
+  [90m3 |[0m [90m//# sourceMappingURL=index.js.map[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/drizzle-orm/pg-core/table.js:3:1
+Module not found: Can't resolve './columns/all.js'
+  [90m1 |[0m [36mimport[0m { entityKind } [36mfrom[0m [32m"../entity.js"[0m;
+  [90m2 |[0m [36mimport[0m { [33mTable[0m } [36mfrom[0m [32m"../table.js"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { getPgColumnBuilders } [36mfrom[0m [32m"./columns/all.js"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mconst[0m [33mInlineForeignKeys[0m = [33mSymbol[0m.[36mfor[0m([32m"drizzle:PgInlineForeignKeys"[0m);
+  [90m5 |[0m [36mconst[0m [33mEnableRLS[0m = [33mSymbol[0m.[36mfor[0m([32m"drizzle:EnableRLS"[0m);
+  [90m6 |[0m [36mclass[0m [33mPgTable[0m [36mextends[0m [33mTable[0m {
+
+
+
+Import trace:
+  App Route:
+    ./node_modules/drizzle-orm/pg-core/table.js
+    ./node_modules/drizzle-orm/pg-core/primary-keys.js
+    ./node_modules/drizzle-orm/relations.js
+    ./node_modules/drizzle-orm/better-sqlite3/driver.js
+    ./lib/db/index.ts
+    ./app/api/tenders/[id]/route.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/drizzle-orm/sqlite-core/table.js:3:1
+Module not found: Can't resolve './columns/all.js'
+  [90m1 |[0m [36mimport[0m { entityKind } [36mfrom[0m [32m"../entity.js"[0m;
+  [90m2 |[0m [36mimport[0m { [33mTable[0m } [36mfrom[0m [32m"../table.js"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { getSQLiteColumnBuilders } [36mfrom[0m [32m"./columns/all.js"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mconst[0m [33mInlineForeignKeys[0m = [33mSymbol[0m.[36mfor[0m([32m"drizzle:SQLiteInlineForeignKeys"[0m);
+  [90m5 |[0m [36mclass[0m [33mSQLiteTable[0m [36mextends[0m [33mTable[0m {
+  [90m6 |[0m   [36mstatic[0m [entityKind] = [32m"SQLiteTable"[0m;
+
+
+
+Import trace:
+  App Route:
+    ./node_modules/drizzle-orm/sqlite-core/table.js
+    ./lib/db/schema.ts
+    ./app/api/auth/login/route.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
