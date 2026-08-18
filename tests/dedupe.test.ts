@@ -8,11 +8,6 @@ process.env.GEMINI_API_KEY = "test-fake-key-for-mocked-fetch-only";
 
 import assert from "node:assert";
 
-interface MockChunk {
-  chunkIndex: number;
-  text: string;
-}
-
 const captured: { chunkIndex: number; hasAdj: boolean; hasFarA: boolean; hasFarB: boolean }[] = [];
 
 global.fetch = (async (_url: string, init: RequestInit) => {

@@ -1,5 +1,4 @@
-import { PDFParse } from "pdf-parse";
-import { GlobalWorkerOptions } from "pdfjs-dist/legacy/build/pdf.mjs";
+import { getDocument, GlobalWorkerOptions } from "pdfjs-dist/legacy/build/pdf.mjs";
 import path from "path";
 import fs from "fs";
 import { pathToFileURL } from "node:url";
@@ -34,13 +33,20 @@ export async function fileToText(file: File): Promise<string> {
   const buffer = new Uint8Array(await file.arrayBuffer());
 
   if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-    const parser = new PDFParse({ data: buffer });
-    try {
-      const result = await parser.getText();
-      return result.text;
-    } finally {
-      await parser.destroy();
+    const loadingTask = getDocument({ data: buffer, useWorkerFetch: false });
+    const pdf = await loadingTask.promise;
+    let fullText = "";
+    const numPages = pdf.numPages;
+    for (let i = 1; i <= numPages; i++) {
+      const page = await pdf.getPage(i);
+      const textContent = await page.getTextContent();
+      for (const item of textContent.items) {
+        if ("str" in item) {
+          fullText += item.str + " ";
+        }
+      }
     }
+    return fullText.trim();
   }
 
   return new TextDecoder("utf-8").decode(buffer);

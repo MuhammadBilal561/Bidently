@@ -80,7 +80,7 @@ export async function extractRequirements(
 
   const chunks = splitIntoChunks(documentText);
   const perChunkResults = await Promise.all(
-    chunks.map((chunk, index) => extractChunk(chunk, index))
+    chunks.map((chunk) => extractChunk(chunk))
   );
 
   // Merge: first chunk's title/issuer/deadline win (front matter usually
@@ -116,8 +116,7 @@ function splitIntoChunks(text: string): string[] {
 }
 
 async function extractChunk(
-  chunk: string,
-  _chunkIndex: number
+  chunk: string
 ): Promise<{
   document_title: string;
   issuing_body: string | null;

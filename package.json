@@ -20,7 +20,8 @@
     "test:totp": "tsx tests/totp.test.ts",
     "test:authz": "tsx tests/authz.test.ts",
     "test:retry": "tsx tests/retry.test.ts",
-    "test:unit": "npm run test:chunking && npm run test:dedupe && npm run test:validation && npm run test:auth && npm run test:totp && npm run test:authz && npm run test:retry"
+    "test:pdf": "tsx tests/pdf-extraction.test.ts",
+    "test:unit": "npm run test:chunking && npm run test:dedupe && npm run test:validation && npm run test:auth && npm run test:totp && npm run test:authz && npm run test:retry && npm run test:pdf"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -30,7 +31,6 @@
     "jose": "^6.2.6",
     "lucide-react": "^1.28.0",
     "next": "^16.2.12",
-    "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^5.4.296",
     "postgres": "^3.4.9",
     "react": "19.2.4",
