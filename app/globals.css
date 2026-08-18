@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f5f6f4;
+  --surface: #ffffff;
+  --ink: #12172a;
+  --slate: #5a6178;
+  --slate-line: #e1e3e2;
+  --ember: #c2410c;
+  --ember-soft: #fdece3;
+  --verified: #166534;
+  --verified-soft: #e7f3ec;
+  --attention: #92400e;
+  --attention-soft: #fbf0e1;
+
+  /* Elevation shadows — tuned to --ink at low opacity so they feel like
+     they belong to the palette, not generic black-shadow defaults. */
+  --shadow-resting: 0 1px 3px rgba(18, 23, 42, 0.08);
+  --shadow-hover: 0 4px 12px rgba(18, 23, 42, 0.10);
+  --shadow-floating: 0 8px 24px rgba(18, 23, 42, 0.12);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-slate-line: var(--slate-line);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-verified: var(--verified);
+  --color-verified-soft: var(--verified-soft);
+  --color-attention: var(--attention);
+  --color-attention-soft: var(--attention-soft);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-plex-mono);
+  --shadow-resting: var(--shadow-resting);
+  --shadow-hover: var(--shadow-hover);
+  --shadow-floating: var(--shadow-floating);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--ember-soft);
+  color: var(--ember);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
