@@ -8,7 +8,7 @@ import type {
 } from "./types";
 
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const MATCH_THRESHOLD = 0.55; // below this, treat as a content gap rather than force a bad match
 
 export async function generateDraft(

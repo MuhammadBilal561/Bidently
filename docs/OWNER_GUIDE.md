@@ -51,18 +51,18 @@ sample tenders.
    are the mock, not a bug.
 
 > **503 / "high demand" errors?** They are transient and the app retries them
-> automatically with exponential backoff (`lib/retry.ts`). If a request still
-> fails after a few tries, switch to a specific stable model in `.env.local`:
+> automatically with exponential backoff (`lib/retry.ts`). If you hit daily
+> quota limits, switch to a model with higher free-tier limits in `.env.local`:
 >
 > ```
-> GEMINI_MODEL=gemini-3.7-flash
+> GEMINI_MODEL=gemini-2.5-flash-lite
 > ```
 >
 > Check https://ai.google.dev/gemini-api/docs/models for the current free-tier
-> model names; the default `gemini-flash-latest` is an alias that always points
-> to the latest stable Flash model (currently `gemini-3.7-flash`).
+> model names and quotas. The default `gemini-2.5-flash` provides ~250 requests/day
+> (good quality), while `gemini-2.5-flash-lite` offers 1000+ requests/day (lower quality).
 
-Optional: `GEMINI_MODEL` (defaults to `gemini-flash-latest`) and
+Optional: `GEMINI_MODEL` (defaults to `gemini-2.5-flash` with ~250 requests/day free tier) and
 `GEMINI_EMBEDDING_MODEL` (defaults to `gemini-embedding-001`). Verify the current
 free-tier model names at https://ai.google.dev/gemini-api/docs/models before
 deploying.

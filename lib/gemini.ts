@@ -1,7 +1,7 @@
 import type { ExtractedRequirement, ExtractionResult } from "./types";
 import { HttpError, withRetry } from "./retry";
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const API_KEY = process.env.GEMINI_API_KEY;
 
 // Documents longer than this get split into overlapping chunks and
