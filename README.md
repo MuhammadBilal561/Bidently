@@ -124,10 +124,12 @@ Reference `.env.example` for the full set of required and optional variables.
 | Variable | Required | Purpose |
 |---|---|---|
 | `GEMINI_API_KEY` | No | Real AI extraction & drafting; mock mode without it |
-| `AUTH_SECRET` | Before deploy | Signs session cookies |
+| `GEMINI_MODEL` | No | Defaults to `gemini-2.5-flash` (~250 req/day free tier); use `gemini-2.5-flash-lite` for higher quota (1000+ req/day) |
+| `AUTH_SECRET` | Before deploy | Signs session cookies; generate with `openssl rand -base64 32` |
 | `DATABASE_URL` | Required before deploy | Supabase/Postgres connection string (pooler URL for serverless) |
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | For OAuth | Enables "Continue with Google" |
-| `APP_URL` | Before deploy | Base URL for redirects |
+| `OAUTH_REDIRECT_URI` | For OAuth | OAuth callback URL (defaults to localhost:3000 in dev) |
+| `APP_URL` | Before deploy | Base URL for redirects (e.g., `https://your-app.vercel.app`) |
 
 ## Architecture decisions
 
@@ -146,6 +148,22 @@ Reference `.env.example` for the full set of required and optional variables.
 - `docs/OWNER_GUIDE.md` — step-by-step activation (AI keys, OAuth, Postgres, deploy)
 - `docs/AGENT_INSTRUCTIONS.md` — engineering instructions and roadmap
 - `docs/BLUEPRINT.md` — original product blueprint
+- `SECURITY.md` — vulnerability reporting and security best practices
+
+## Contributing
+
+Contributions are welcome! Please:
+- Fork the repository and create a feature branch
+- Follow the existing code style and conventions
+- Add tests for new functionality
+- Ensure `npm run test:unit`, `npx tsc --noEmit`, and `npm run build` pass
+- Submit a pull request with a clear description of changes
+
+## Security
+
+Please report security vulnerabilities responsibly. See [SECURITY.md](SECURITY.md) for details.
+
+**Important:** Never commit real API keys, passwords, database URLs, or other secrets to this repository.
 
 ## License
 
