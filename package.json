@@ -25,6 +25,7 @@
     "test:unit": "npm run test:chunking && npm run test:dedupe && npm run test:validation && npm run test:auth && npm run test:totp && npm run test:authz && npm run test:retry && npm run test:pdf && npm run test:extract-route"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "bcryptjs": "^3.0.3",
     "caniuse-lite": "^1.0.30001809",
     "drizzle-orm": "^0.45.2",
