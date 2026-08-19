@@ -1,9 +1,9 @@
 /**
- * Verifies that fileToText() extracts REAL text from a PDF via pdfjs-dist
+ * Verifies that fileToText() extracts REAL text from a PDF using unpdf
  * (not mock/demo data). The PDF is hand-crafted as a raw byte stream so this
  * test has no extra dependencies.
  *
- * Run with: npx tsx tests/pdf-extraction.test.ts
+ * Run with: node --import tsx tests/pdf-extraction.test.ts
  */
 
 import assert from "node:assert";
@@ -44,7 +44,7 @@ async function run() {
   // Wrap in a File object (available in Node 20+ via global)
   const file = new File([pdfBytes], "test.pdf", { type: "application/pdf" });
 
-  console.log(`Extracting text from in-memory PDF (${pdfBytes.byteLength} bytes)…`);
+  console.log(`Extracting text from in-memory PDF (${pdfBytes.byteLength} bytes) using unpdf...`);
   const extracted = await fileToText(file);
 
   console.log(`Extracted: "${extracted}"`);
@@ -58,7 +58,7 @@ async function run() {
     "fileToText() returned empty string — extraction failed"
   );
 
-  console.log("PASS — fileToText() returned real PDF text, not mock/demo data.");
+  console.log("PASS — fileToText() returned real PDF text using unpdf (serverless-compatible).");
 }
 
 run().catch((err) => {
