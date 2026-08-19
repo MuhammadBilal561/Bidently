@@ -21,7 +21,8 @@
     "test:authz": "tsx tests/authz.test.ts",
     "test:retry": "tsx tests/retry.test.ts",
     "test:pdf": "tsx tests/pdf-extraction.test.ts",
-    "test:unit": "npm run test:chunking && npm run test:dedupe && npm run test:validation && npm run test:auth && npm run test:totp && npm run test:authz && npm run test:retry && npm run test:pdf"
+    "test:extract-route": "tsx tests/extract-route-module-load.test.ts",
+    "test:unit": "npm run test:chunking && npm run test:dedupe && npm run test:validation && npm run test:auth && npm run test:totp && npm run test:authz && npm run test:retry && npm run test:pdf && npm run test:extract-route"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
